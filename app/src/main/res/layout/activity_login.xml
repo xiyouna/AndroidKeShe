@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_sign_in"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp">
+
+    <ImageView
+        android:id="@+id/iv_top_logo"
+        android:layout_width="78dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/widget_size_8"
+        android:text="登陆"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_size_16" />
+
+    <!-- 账号 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_50"
+        android:layout_marginTop="@dimen/widget_size_26"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/uname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/widget_size_8"
+            android:layout_marginRight="@dimen/widget_size_8"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="请输入账号/手机号"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/font_size_18" />
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#E6E6E6" />
+
+    <!-- 密码 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_50"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/pword"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/widget_size_8"
+            android:layout_marginRight="@dimen/widget_size_8"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:textColor="#333333"
+            android:textColorHint="#999999"
+            android:textFontWeight="1"
+            android:textSize="@dimen/font_size_18" />
+
+        <CheckBox
+            android:id="@+id/toggle_show_pwd"
+            android:layout_width="@dimen/widget_size_22"
+            android:layout_height="@dimen/widget_size_22"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/widget_size_8"
+            android:background="@drawable/login_selector_show_hide_pwd_input"
+            android:button="@null"
+            android:checked="false" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#E6E6E6" />
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/login_selector_theme_btn_bg"
+        android:text="登录"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_size_16" />
+
+
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/widget_size_12"
+        android:text="没有账号？立即注册"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/font_size_14" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

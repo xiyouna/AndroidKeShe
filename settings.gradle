@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "AndroidKeShe"
+rootProject.name = "My Application"

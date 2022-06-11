@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--orderInCategory菜单项的优先级，也就是顺序，只能设置正整数，数值越大菜单项越靠前-->
+<!--    <item-->
+<!--        android:id="@+id/item2"-->
+<!--        android:icon="@mipmap/baseline_photo_black_24"-->
+<!--        android:title="图片"-->
+<!--        app:showAsAction="always" />-->
+</menu>
