@@ -95,7 +95,7 @@ public class CalenderFragment extends Fragment implements
     }
 
 
-    protected void initData() {
+    protected void initData() {//遍历日历标记事项的小圆点
         List<NoteBean> noteBeans = noteDao.queryNotesAll();
         Map<String, Calendar> map = new HashMap<>();
 
@@ -104,9 +104,12 @@ public class CalenderFragment extends Fragment implements
             String text = noteBeans.get(i).getTitle().substring(0, 1);
             int year = Integer.parseInt(noteBeans.get(i).getYear());
             int month = Integer.parseInt(noteBeans.get(i).getMonth());
-            map.put(getSchemeCalendar(year, month, Integer.parseInt(day), 0xFF40db25, text).toString(),
-                    getSchemeCalendar(year, month, Integer.parseInt(day), 0xFF40db25, text));
+            map.put(getSchemeCalendar(year, month, Integer.parseInt(day), 0xEC810D,"事").toString(),
+                    getSchemeCalendar(year, month, Integer.parseInt(day), 0xEC810D,"事"));
         }
+
+        //Integer.parseInt函数是什么？？？？？？？？
+
         //此方法在巨大的数据量上不影响遍历性能，推荐使用
         mCalendarView.clearSchemeDate();
         mCalendarView.setSchemeDate(map);
@@ -138,7 +141,7 @@ public class CalenderFragment extends Fragment implements
     }
 
     @Override
-    public void onResume() {
+    public void onResume() {//回调
         super.onResume();
         initData();
     }
@@ -151,8 +154,6 @@ public class CalenderFragment extends Fragment implements
         calendar.setSchemeColor(color);//如果单独标记颜色、则会使用这个颜色
         calendar.setScheme(text);
         calendar.addScheme(new Calendar.Scheme());
-        calendar.addScheme(0xFF008800, "假");
-        calendar.addScheme(0xFF008800, "节");
         return calendar;
     }
 
@@ -163,7 +164,7 @@ public class CalenderFragment extends Fragment implements
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onCalendarSelect(Calendar calendar, boolean isClick) {
+    public void onCalendarSelect(Calendar calendar, boolean isClick) {//点击选择看哪天
         mTextLunar.setVisibility(View.VISIBLE);
         mTextYear.setVisibility(View.VISIBLE);
         mTextMonthDay.setText(calendar.getMonth() + "月" + calendar.getDay() + "日");
@@ -173,7 +174,7 @@ public class CalenderFragment extends Fragment implements
         notes.clear();
         String month = calendar.getMonth() < 10 ? "0" + calendar.getMonth() : calendar.getMonth() + "";
         String day =calendar.getDay() < 10 ? "0" + calendar.getDay() : calendar.getDay() + "";
-        notes.addAll(noteDao.queryNotesAllByDate(calendar.getYear() + "", month + "", day + ""));
+        notes.addAll(noteDao.queryNotesAllByDate(calendar.getYear() + "", month + "", day + ""));//今日事项
         adapter.notifyDataSetChanged();
     }
 

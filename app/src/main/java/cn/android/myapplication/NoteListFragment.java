@@ -63,11 +63,11 @@ public class NoteListFragment extends Fragment implements
 
     protected void initData() {
 
-        mRecyclerView = (RecyclerView) inflate.findViewById(R.id.rv_note);
-        inflate.findViewById(R.id.fb_add).setOnClickListener(new View.OnClickListener() {
+        mRecyclerView = (RecyclerView) inflate.findViewById(R.id.rv_note);//inflate是将一个layout.xml布局文件变为一个View对象
+        inflate.findViewById(R.id.fb_add).setOnClickListener(new View.OnClickListener() {//悬浮按钮添加事项
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), EditActivity.class));
+                startActivity(new Intent(getContext(), EditActivity.class));//跳转到编辑页面
             }
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -87,29 +87,29 @@ public class NoteListFragment extends Fragment implements
                 baseView.getView(R.id.card_view_note).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        view.setVisibility(view.isShown() ? View.GONE : View.VISIBLE);
+                        view.setVisibility(view.isShown() ? View.GONE : View.VISIBLE);//点击显示内容
                     }
                 });
                 CheckBox checkBox = baseView.getView(R.id.cb_complete);
-                if (noteBean.getMark() == 1) {
+                if (noteBean.getMark() == 1) {//状态完成
                     checkBox.setChecked(true);
                 }
                 baseView.getView(R.id.iv_delete).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        noteBean.setMark(2);
+                        noteBean.setMark(2);//状态删除
                         new NoteDao(NoteListFragment.this.getContext()).updateNote(noteBean);
                         adapter.setNewInstance(noteDao.queryNotesAll());
                     }
                 });
                 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {//复选框
                         if (isChecked) {
                             noteBean.setMark(1);
                             new NoteDao(NoteListFragment.this.getContext()).updateNote(noteBean);
                         } else {
-                            noteBean.setMark(0);
+                            noteBean.setMark(0);//状态待做
                             new NoteDao(NoteListFragment.this.getContext()).updateNote(noteBean);
                         }
                     }
@@ -125,8 +125,8 @@ public class NoteListFragment extends Fragment implements
             public boolean onItemLongClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
                 Intent intent = new Intent(getContext(), EditActivity.class);
                 NoteBean noteBean = (NoteBean) adapter.getData().get(position);
-                intent.putExtra("note", noteBean);
-                startActivity(intent);
+                intent.putExtra("note", noteBean);//缓存键值对
+                startActivity(intent);//跳转
                 return false;
             }
         });
@@ -142,7 +142,7 @@ public class NoteListFragment extends Fragment implements
     }
 
     @Override
-    public void onResume() {
+    public void onResume() {//回调刷新数据
         super.onResume();
         initData();
     }

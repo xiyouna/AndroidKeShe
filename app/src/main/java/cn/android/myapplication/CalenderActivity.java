@@ -64,19 +64,18 @@ public class CalenderActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_change:
-                fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
+            case R.id.menu_change://视图切换
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();//把fragment添加到activity,打包事务
                 if (isShowCalender) {
                     fragment1 = new NoteListFragment();
-                   fragmentTransaction.replace(R.id.container, fragment1).commit();
+                    fragmentTransaction.replace(R.id.container, fragment1).commit();//切换到列表
                     isShowCalender = false;
                 } else {
-                    fragmentTransaction.replace(R.id.container, fragment).commit();
+                    fragmentTransaction.replace(R.id.container, fragment).commit();//切换到日历
                     isShowCalender = true;
                 }
                 break;
-            case R.id.menu_tj:
+            case R.id.menu_tj://统计
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.container, AnalyseFragment.newInstance()).commit();
 

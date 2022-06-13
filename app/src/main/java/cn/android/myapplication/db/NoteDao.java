@@ -1,5 +1,6 @@
 package cn.android.myapplication.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -67,6 +68,7 @@ public class NoteDao {
     }
 
 
+    @SuppressLint("Range")
     public List<NoteBean> queryNotesAll() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 

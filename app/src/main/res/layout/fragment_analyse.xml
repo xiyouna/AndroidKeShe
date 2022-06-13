@@ -3,16 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#090909"
     android:orientation="vertical">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="当前时间"
+            android:textColor="#F6F4F4"></TextView>
         <ImageView
+            android:visibility="gone"
             android:id="@+id/iv_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,17 +29,19 @@
             android:src="@mipmap/icon_sz_yszc" />
 
         <TextView
+
             android:id="@+id/tv_title"
-            android:layout_width="95dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:gravity="center"
             android:text="2021年1月"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="25sp" />
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/iv_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,12 +57,14 @@
         android:scrollbars="none">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="60dp"
             android:orientation="vertical">
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -76,73 +88,83 @@
             </LinearLayout>
 
             <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:gravity="center"
+                android:layout_height="330dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <LinearLayout
 
-                        android:gravity="center_vertical"
-                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical">
+
                         <ImageView
-                            android:src="@mipmap/time"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"/>
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/time" />
+
                         <TextView
 
-                            android:layout_marginLeft="10dp"
-                            android:textSize="16sp"
-                            android:text="选择开始时间"
-                            android:textColor="@android:color/white"
                             android:id="@+id/tv_start_time"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="选择开始时间"
+                            android:textColor="#F6F8F8"
+                            android:textSize="25sp" />
                     </LinearLayout>
+
                     <LinearLayout
 
-                        android:gravity="center_vertical"
-                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+
                         <ImageView
-                            android:src="@mipmap/time"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"/>
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/time" />
+
                         <TextView
-                            android:layout_marginLeft="10dp"
-                            android:textSize="16sp"
-                            android:text="选择结束时间"
-                            android:textColor="@android:color/white"
                             android:id="@+id/tv_end_time"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="选择结束时间"
+                            android:textColor="@android:color/white"
+                            android:textSize="25sp" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <Button
-                    android:layout_marginLeft="15dp"
                     android:id="@+id/btn_query"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    android:background="#AD3A98C5"
+                    android:text="查询日志"
                     android:textColor="@color/white"
-                    android:text="查询"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="25sp" />
 
             </LinearLayout>
             <TextView
                 android:layout_margin="15dp"
                 android:layout_marginLeft="10dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textColor="#AB03A9F4"
                 android:id="@+id/tv_result"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"></TextView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

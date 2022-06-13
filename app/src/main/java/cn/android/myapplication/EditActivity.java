@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class EditActivity extends AppCompatActivity {
     private String TAG = "Diary";
     List<Uri> mSelected;
     private EditText editText;
+    private Button button;
     private static final int REQUEST_CODE_CHOOSE = 23;//定义请求码常量
     private Toolbar toolbar;
     private RecyclerView recyclerView;
@@ -66,6 +68,7 @@ public class EditActivity extends AppCompatActivity {
         editText = findViewById(R.id.edit_view);
         etTitle = findViewById(R.id.edit_title);
         tvTime = findViewById(R.id.tv_time);
+        button =findViewById(R.id.edit_floating);
         note = (NoteBean) getIntent().getSerializableExtra("note");
         SharedPreferences prefs = getSharedPreferences("setting", Context.MODE_PRIVATE);
         editText.setTextSize(prefs.getInt("edit_font_size", 16));
@@ -80,13 +83,12 @@ public class EditActivity extends AppCompatActivity {
             imagePath = note.getImage();
             etTitle.setText(note.getTitle());
             editText.setText(note.getContent());
-            editText.setText(note.getCreateTime());
+            tvTime.setText(note.getCreateTime());
             select_day = note.getDay();
             select_month = note.getMonth();
             select_year = note.getYear();
         }
-        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.edit_floating);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(editText.getText().toString())) {

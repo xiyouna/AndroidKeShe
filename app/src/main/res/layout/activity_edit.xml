@@ -21,16 +21,16 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"></androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <Button
         android:id="@+id/edit_floating"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:src="@mipmap/baseline_save_black_36dp"
-        app:backgroundTint="@color/colorPrimary" />
-
+       android:text="增加"
+        android:textSize="30sp"
+        app:backgroundTint="#64DFC6" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,50 +43,62 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edit_title"
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:background="#B070B68C"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:textSize="30sp"
+                    android:text="2022-10-20"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/tv_time" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@mipmap/time" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edit_title"
+                android:background="@drawable/bt_border"
+                android:layout_marginTop="17dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:gravity="left|top"
-                android:hint="请输入标题:"
+                android:hint="标题编辑"
                 android:minLines="1"
                 android:textIsSelectable="true"
                 android:textSize="16sp" />
 
             <EditText
+                android:background="@drawable/textview_border"
+                android:layout_marginTop="4dp"
                 android:id="@+id/edit_view"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
+
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:gravity="left|top"
-                android:hint="在这里输入文字:"
-                android:minLines="8"
+                android:hint="详情内容编辑"
+                android:minLines="9"
                 android:textIsSelectable="true"
                 android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/photo_list"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content" />
-            <LinearLayout
-                android:gravity="center_vertical"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@mipmap/time"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:textSize="16sp"
-                    android:text="2022-10-20"
-                    android:textColor="@android:color/black"
-                    android:id="@+id/tv_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

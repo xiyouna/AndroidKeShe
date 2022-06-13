@@ -18,7 +18,7 @@ import cn.android.myapplication.R;
 
 
 /**
- * RecyclerView适配器
+ * Note
  */
 
 public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHolder>
@@ -151,13 +151,13 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
         @Override
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
 //            contextMenu.setHeaderTitle("选择你的操作");
-            contextMenu.add(0, Menu.FIRST + 1, 0, "查看该笔记");
-            contextMenu.add(0, Menu.FIRST + 2, 0, "编辑该笔记");
-            contextMenu.add(0, Menu.FIRST + 3, 0, "删除该笔记");
-            contextMenu.add(0, Menu.FIRST + 4, 0, "标记为已完成");
-            contextMenu.add(0, Menu.FIRST + 5, 0, "标记为未完成");
-            contextMenu.add(0, Menu.FIRST + 6, 0, "设置日期");
-            contextMenu.add(0, Menu.FIRST + 7, 0, "清除提醒");
+//            contextMenu.add(0, Menu.FIRST + 1, 0, "查看该笔记");
+//            contextMenu.add(0, Menu.FIRST + 2, 0, "编辑该笔记");
+//            contextMenu.add(0, Menu.FIRST + 3, 0, "删除该笔记");
+//            contextMenu.add(0, Menu.FIRST + 4, 0, "标记为已完成");
+//            contextMenu.add(0, Menu.FIRST + 5, 0, "标记为未完成");
+//            contextMenu.add(0, Menu.FIRST + 6, 0, "设置日期");
+//            contextMenu.add(0, Menu.FIRST + 7, 0, "清除提醒");
         }
     }
     public interface OnAlarmClickListener{
